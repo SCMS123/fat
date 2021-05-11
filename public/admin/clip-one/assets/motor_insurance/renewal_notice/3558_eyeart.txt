@@ -1,0 +1,36 @@
+Admin
+User Management ( Including View Page )  -> done
+Category & Sub Category ----done
+Brand Management  ->done
+Product Management ( Add Product,  product list etc )---done
+Order Management
+Or Code - ( second phase )
+Discount Coupons  - ( second phase )
+Second Order Form - ( second phase )
+Multi Language - ( second phase )
+
+
+
+Frontend
+Login   ---  done
+Registration ( Including Admin Apprvoal )---- done
+User Dashbord in frontend
+Dynamic Category page listing
+Dynamic single page
+add to cart & quick view & wishlish functionality
+Cart page
+checkout part
+complete order page
+
+
+
+
+Today Task
+
+Category Listing---http://standupgrowth.com/designs/eyeart/category-list
+product Listing---http://standupgrowth.com/designs/eyeart/product-list
+Single Product Page ---http://standupgrowth.com/designs/eyeart/product-detail
+ Cart Page--http://standupgrowth.com/designs/eyeart/cart
+ CheckOut Page--http://standupgrowth.com/designs/eyeart/checkout
+ Product Complete-- http://standupgrowth.com/designs/eyeart/product-complete
+.etc
