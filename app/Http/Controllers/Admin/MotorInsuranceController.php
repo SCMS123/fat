@@ -21,6 +21,7 @@ use App\Models\Motorprivate;
 use App\Models\Policycategory;
 use App\Models\Policysubcategory;
 use App\Models\Customer;
+use App\Models\Comment;
 use App\DataTables\MotorInsuranceDataTable;
 
 class MotorInsuranceController extends Controller
@@ -206,6 +207,43 @@ class MotorInsuranceController extends Controller
 			return redirect('admin/motor_insurance/edit'.'/'.$id);
         }
 	}
+	 public function view($id)
+    {
+    	$data['result'] = MotorInsurance::find($id);
+    	$data['comments'] = Comment::where('table','motor_insurance')
+    								->where('policy_id',$id)
+    								->get();
+
+    	return view('admin/motor_insurance/view',$data);
+    }
+
+    public function comment(Request $request)
+    {
+    	if (!empty($request->comment)) {
+    		$data = new Comment;
+	        //=========================================================
+	        $data->table = 'motor_insurance';
+	        $data->policy_id = $request->policy_id;
+	        $data->comment_by = Auth::user()->id;
+	        $data->comment = $request->comment;
+	        
+	        if($data->save()){
+	        	session()->flash('message', 'Comment posted successfully');
+				Session::flash('alert-type', 'success'); 
+				return redirect('admin/motor_insurance/view/'.$request->policy_id);
+	        }else{
+	        	session()->flash('message', 'Some error occured!');
+				Session::flash('alert-type', 'error'); 
+				return redirect('admin/motor_insurance/view/'.$request->policy_id);
+	        }
+    	}else{
+    		session()->flash('message', 'Please enter comment!');
+			Session::flash('alert-type', 'error'); 
+			return redirect('admin/motor_insurance/view/'.$request->policy_id);
+    	}
+    }
+
+    //===================================================
 
 	public function delete($id)
 	{

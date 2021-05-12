@@ -151,6 +151,7 @@ Route::group(['prefix'=> 'admin','middleware' => ['auth','UserRole']] , function
     Route::POST('customers/save', ['as'=>'customers.save', 'uses'=>'Admin\CustomerController@save']);
     Route::get('customers/edit/{id}', ['as'=>'customers.edit', 'uses'=>'Admin\CustomerController@edit']);
     Route::POST('customers/update', ['as'=>'customers.update', 'uses'=>'Admin\CustomerController@update']);
+    Route::get('customers/view/{id}', ['as'=>'customers.view', 'uses'=>'Admin\CustomerController@view']);
     Route::get('customers/delete/{id}', ['as'=>'customers.delete', 'uses'=>'Admin\CustomerController@delete']);
     Route::get('customers/status/{id}', ['as'=>'customers.status', 'uses'=>'Admin\CustomerController@status']);
     
@@ -169,8 +170,10 @@ Route::group(['prefix'=> 'admin','middleware' => ['auth','UserRole']] , function
     Route::POST('motor_insurance/save', ['as'=>'motor_insurance.save', 'uses'=>'Admin\MotorInsuranceController@save']);
     Route::get('motor_insurance/edit/{id}', ['as'=>'motor_insurance.edit', 'uses'=>'Admin\MotorInsuranceController@edit']);
     Route::POST('motor_insurance/update', ['as'=>'motor_insurance.update', 'uses'=>'Admin\MotorInsuranceController@update']);
+    Route::get('motor_insurance/view/{id}', ['as'=>'motor_insurance.view', 'uses'=>'Admin\MotorInsuranceController@view']);
     Route::get('motor_insurance/delete/{id}', ['as'=>'motor_insurance.delete', 'uses'=>'Admin\MotorInsuranceController@delete']);
     Route::get('motor_insurance/status/{id}', ['as'=>'motor_insurance.status', 'uses'=>'Admin\MotorInsuranceController@status']);
+    Route::POST('motor_insurance/comment', ['as'=>'motor_insurance.comment', 'uses'=>'Admin\MotorInsuranceController@comment']);
     
     /// Motor Private ////
     Route::get('motor_private/index', ['as'=>'motor_private.index',  'uses'=>'Admin\MotorPrivateController@index']);
@@ -178,6 +181,7 @@ Route::group(['prefix'=> 'admin','middleware' => ['auth','UserRole']] , function
     Route::POST('motor_private/save', ['as'=>'motor_private.save', 'uses'=>'Admin\MotorPrivateController@save']);
     Route::get('motor_private/edit/{id}', ['as'=>'motor_private.edit', 'uses'=>'Admin\MotorPrivateController@edit']);
     Route::POST('motor_private/update', ['as'=>'motor_private.update', 'uses'=>'Admin\MotorPrivateController@update']);
+    Route::get('motor_private/view/{id}', ['as'=>'motor_private.view', 'uses'=>'Admin\MotorPrivateController@view']);
     Route::get('motor_private/delete/{id}', ['as'=>'motor_private.delete', 'uses'=>'Admin\MotorPrivateController@delete']);
     Route::get('motor_private/status/{id}', ['as'=>'motor_private.status', 'uses'=>'Admin\MotorPrivateController@status']);
 
@@ -187,15 +191,17 @@ Route::group(['prefix'=> 'admin','middleware' => ['auth','UserRole']] , function
     Route::POST('motor_commercial/save', ['as'=>'motor_commercial.save', 'uses'=>'Admin\MotorCommercialController@save']);
     Route::get('motor_commercial/edit/{id}', ['as'=>'motor_commercial.edit', 'uses'=>'Admin\MotorCommercialController@edit']);
     Route::POST('motor_commercial/update', ['as'=>'motor_commercial.update', 'uses'=>'Admin\MotorCommercialController@update']);
+    Route::get('motor_commercial/view/{id}', ['as'=>'motor_commercial.view', 'uses'=>'Admin\MotorCommercialController@view']);
     Route::get('motor_commercial/delete/{id}', ['as'=>'motor_commercial.delete', 'uses'=>'Admin\MotorCommercialController@delete']);
     Route::get('motor_commercial/status/{id}', ['as'=>'motor_commercial.status', 'uses'=>'Admin\MotorCommercialController@status']);
 
-    /// Motor Commercial ////
+    /// Motor psv ////
     Route::get('motor_psv/index', ['as'=>'motor_psv.index',  'uses'=>'Admin\MotorPSVController@index']);
     Route::get('motor_psv/add', ['as'=>'motor_psv.add', 'uses'=>'Admin\MotorPSVController@add']);
     Route::POST('motor_psv/save', ['as'=>'motor_psv.save', 'uses'=>'Admin\MotorPSVController@save']);
     Route::get('motor_psv/edit/{id}', ['as'=>'motor_psv.edit', 'uses'=>'Admin\MotorPSVController@edit']);
     Route::POST('motor_psv/update', ['as'=>'motor_psv.update', 'uses'=>'Admin\MotorPSVController@update']);
+    Route::get('motor_psv/view/{id}', ['as'=>'motor_psv.view', 'uses'=>'Admin\MotorPSVController@view']);
     Route::get('motor_psv/delete/{id}',['as'=>'motor_psv.delete','uses'=>'Admin\MotorPSVController@delete']);
     Route::get('motor_psv/status/{id}',['as'=>'motor_psv.status','uses'=>'Admin\MotorPSVController@status']);
 

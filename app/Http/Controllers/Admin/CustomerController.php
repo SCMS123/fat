@@ -153,6 +153,13 @@ class CustomerController extends Controller
 			return redirect('admin/customers/edit'.'/'.$id);
         }
 	}
+	
+	 public function view($id)
+    {
+    	$data['result'] = Customer::find($id);
+
+    	return view('admin/customers/view',$data);
+    }
 
 	public function delete($id)
 	{

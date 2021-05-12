@@ -199,6 +199,12 @@ class MotorPSVController extends Controller
 			return redirect('admin/motor_psv/edit'.'/'.$id);
         }
 	}
+	public function view($id)
+    {
+    	$data['result'] = MotorPSV::find($id);
+
+    	return view('admin/motor_psv/view',$data);
+    }
 
 	public function delete($id)
 	{

@@ -199,6 +199,14 @@ class MotorPrivateController extends Controller
 			return redirect('admin/motor_private/edit'.'/'.$id);
         }
 	}
+	
+	public function view($id)
+    {
+    	$data['result'] = MotorPrivate::find($id);
+
+    	return view('admin/motor_private/view',$data);
+    }
+
 
 	public function delete($id)
 	{

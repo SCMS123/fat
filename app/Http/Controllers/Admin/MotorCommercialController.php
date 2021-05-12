@@ -199,6 +199,12 @@ class MotorCommercialController extends Controller
 			return redirect('admin/motor_commercial/edit'.'/'.$id);
         }
 	}
+	public function view($id)
+    {
+    	$data['result'] = MotorCommercial::find($id);
+
+    	return view('admin/motor_commercial/view',$data);
+    }
 
 	public function delete($id)
 	{
